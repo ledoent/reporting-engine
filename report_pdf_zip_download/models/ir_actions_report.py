@@ -11,3 +11,6 @@ class IrActionsReport(models.Model):
         help="If enabled, the report will be downloaded as a zip "
         "file for multiple records."
     )
+
+    def _get_readable_fields(self):
+        return super()._get_readable_fields() | {"zip_download"}

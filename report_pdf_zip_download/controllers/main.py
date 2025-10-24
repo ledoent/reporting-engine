@@ -2,16 +2,15 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 import json
-import time
 import zipfile
 from datetime import datetime
 from io import BytesIO
 
-from odoo import http
+from odoo import http, tools
 from odoo.http import content_disposition, request
 from odoo.tools.safe_eval import safe_eval
 
-from odoo.addons.web.controllers.main import ReportController
+from odoo.addons.web.controllers.report import ReportController
 
 
 class ExtendedReportController(ReportController):
@@ -33,13 +32,14 @@ class ExtendedReportController(ReportController):
                 context.update(data["context"])
             attachments = []
             for doc_id in doc_ids:
-                pdf_content, _ = report.with_context(context).render_qweb_pdf(
-                    [doc_id], data=data
+                pdf_content, _ = report.with_context(**context)._render_qweb_pdf(
+                    reportname, res_ids=[doc_id], data=data
                 )
                 if report.print_report_name:
                     obj = request.env[report.model].browse(doc_id)
                     report_name = safe_eval(
-                        report.print_report_name, {"object": obj, "time": time}
+                        report.print_report_name,
+                        {"object": obj, "time": tools.safe_eval.time},
                     )
                 report_name = report_name.replace("/", "_")
                 pdf_name = f"{report_name}.pdf"

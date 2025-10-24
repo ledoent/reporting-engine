@@ -4,14 +4,18 @@
 {
     "name": "Report PDF ZIP Download",
     "category": "Report",
-    "version": "12.0.1.0.0",
+    "version": "18.0.1.0.0",
     "author": "Quartile, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/reporting-engine",
     "license": "AGPL-3",
     "depends": ["web"],
     "data": [
         "views/ir_actions_report_views.xml",
-        "views/web_client_templates.xml",
     ],
+    "assets": {
+        "web.assets_backend": [
+            "report_pdf_zip_download/static/src/js/action_manager_report.esm.js",
+        ],
+    },
     "installable": True,
 }
