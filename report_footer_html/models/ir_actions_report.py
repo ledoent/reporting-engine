@@ -8,7 +8,7 @@ class IrActionsReport(models.Model):
     _inherit = "ir.actions.report"
 
     footer_html = fields.Html(
-        string="Footer HTML",
+        string="Extra Footer",
         help="This HTML will be displayed in the footer of this report.\n"
         "It's recommended to change Paper Format to a new one that fits "
         "correctly to this report by adjusting 'Bottom Margin (mm)' accordingly.",

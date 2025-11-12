@@ -12,7 +12,7 @@
                     name="footer_html"
                     widget="html"
                     options='{"safe": True}'
-                    attrs="{'invisible': [('report_type', 'not in', ['qweb-pdf', 'qweb-html'])]}"
+                    invisible="report_type not in ['qweb-pdf', 'qweb-html']"
                 />
             </xpath>
         </field>
