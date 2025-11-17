@@ -1,6 +1,6 @@
 To configure this module, you need to:
 
-1. Go to System parameters and create or edit `report.display_name_in_footer_models`
+1. Go to System parameters and create `report.display_name_in_footer_models`
    parameter.
 
 2. Add desired model names separated by comma.
@@ -18,11 +18,15 @@ To configure this module, you need to:
    document doesn't have this field, please exclude from the list with '-' and the name
    of the model.
 
-5. Compatible document layout:
+5. Compatible with all document layouts:
 
    - Light
    - Boxed
+   - Bold
    - Striped
+   - Bubble
+   - Wave
+   - Folder
 
 6. Compatible report types:
 

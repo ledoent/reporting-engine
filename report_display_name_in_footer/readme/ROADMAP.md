@@ -16,3 +16,17 @@ Therefore, if you set the configuration parameter to "stock.picking, account.mov
 By setting it to "stock.picking.batch", the module will establish that all the
 documents contained in that report (whether invoices or delivery notes)
 must include the name in the footer.
+
+### Implementation Details
+
+The pagination and document name positioning is implemented differently across report layouts:
+
+**Layouts using `replace` (`Standard`, `Folder`):**
+- The entire report_footer container div is **replaced** to recreate the structure with the pagination moved below the company footer
+- This approach is necessary because these layouts use `<div t-field="company.report_footer"/>` instead of `<span>`, and you cannot add child elements inside the element.
+- The original pagination div is deleted first, then the new structure is created with both the company footer and pagination in the correct order
+
+**Other layouts (`Striped`, `Boxed`, `Bold`, `Bubble`, `Wave`):**
+- Elements are repositioned using `move` operations or by adding CSS classes (`float-start`, `float-end`)
+
+In all cases, the comma separator originally present in the document name is removed by modifying the `t-out` attribute.

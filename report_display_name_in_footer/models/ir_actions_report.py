@@ -4,7 +4,7 @@ from odoo import models
 class IrActionsReport(models.Model):
     _inherit = "ir.actions.report"
 
-    def _render_qweb_pdf(self, report_ref, res_ids=None, data=None):
+    def _pre_render_qweb_pdf(self, report_ref, res_ids=None, data=None):
         dnf_models = set(
             self.env["ir.config_parameter"]
             .sudo()
@@ -18,4 +18,4 @@ class IrActionsReport(models.Model):
         ) and f"-{report_model}" not in dnf_models:
             data = data and dict(data) or {}
             data.update({"display_name_in_footer": True})
-        return super()._render_qweb_pdf(report_ref, res_ids=res_ids, data=data)
+        return super()._pre_render_qweb_pdf(report_ref, res_ids=res_ids, data=data)

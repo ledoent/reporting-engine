@@ -1,5 +1,5 @@
 Printing the name of the document on footer is only allowed by default to invoices by
-setting `account.display_name_in_footer_models` to True.
+setting `account.display_name_in_footer` to True.
 
 This module was developed because there is no way to print other document names on each
 page of reports.
