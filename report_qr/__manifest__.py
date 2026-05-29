@@ -3,12 +3,13 @@
 
 {
     "name": "Web QR Manager",
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "author": "Creu Blanca, Odoo Community Association (OCA)",
     "category": "Reporting",
     "website": "https://github.com/OCA/reporting-engine",
     "license": "AGPL-3",
     "depends": ["web"],
+    "external_dependencies": {"python": ["qrcode"]},
     "data": [],
     "installable": True,
 }
