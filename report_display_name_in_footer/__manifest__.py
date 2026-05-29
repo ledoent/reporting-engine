@@ -4,7 +4,7 @@
 {
     "name": "Report Display Name in Footer",
     "summary": "Show document name in report footer",
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "development_status": "Alpha",
     "category": "Tools",
     "website": "https://github.com/OCA/reporting-engine",
@@ -16,7 +16,5 @@
     "depends": [
         "web",
     ],
-    "data": [
-        "views/report_templates.xml",
-    ],
+    "data": [],
 }
