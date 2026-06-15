@@ -5,9 +5,8 @@ from base64 import b64decode
 from io import BytesIO
 from logging import getLogger
 
-from PyPDF2 import PdfFileReader, PdfFileWriter
-
 from odoo import api, fields, models
+from odoo.tools.pdf import PdfFileReader, PdfFileWriter
 
 logger = getLogger(__name__)
 
