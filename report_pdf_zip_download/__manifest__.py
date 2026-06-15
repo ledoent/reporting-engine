@@ -4,7 +4,7 @@
 {
     "name": "Report PDF ZIP Download",
     "category": "Report",
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "author": "Quartile, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/reporting-engine",
     "license": "AGPL-3",
