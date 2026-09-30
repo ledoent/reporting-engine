@@ -1,0 +1,2 @@
+# DO NOT MERGE — temporary pin until report_xlsx's 20.0 port lands upstream.
+odoo-addon-report_xlsx @ git+https://github.com/ledoent/reporting-engine.git@20.0-mig-report_xlsx#subdirectory=report_xlsx
